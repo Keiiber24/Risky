@@ -1,0 +1,36 @@
+<div class="container border shadow mt-5">
+  <div class="d-flex justify-content-center mt-2 mb-5 bg-secondary align-self">
+    <i class="fa-solid fa-calculator fs-1 m-2"></i>
+    <h4 class="text-center">Position Size Calculator</h4>
+  </div>
+  <div class="row" data-controller="calculator">
+
+      <div class="col-6">
+        <%= simple_form_for :custom_form, url: pages_home_path do |f| %>
+          <%= f.input :total_portafolio, input_html: { data: { calculator_target: "total" } }%>
+          <%= f.input :porcentaje_arriesgar, input_html: { 
+            data: { 
+              calculator_target: "porcentaje",
+              action: 'blur->calculator#calcularCapitalRiesgo'
+              } } %>
+          <%= f.input :capital_total_riesgo, disabled: true, input_html: { data: { calculator_target: 'capital' } } %>
+          <%= f.input :precio_entrada, input_html: { data: { calculator_target: 'entrada' } } %>
+          <%= f.input :precio_salida, input_html: { 
+            data: { 
+              calculator_target: 'salida',
+            action: 'blur->calculator#calcularMontoRiesgo' } } %>
+          <%= f.input :monto_arriesgar_unidad, disabled: true, input_html: { 
+            data: { calculator_target: 'arriesgar'} } %>
+          <%= f.button :submit, "Calcular", class: "btn btn-primary mb-5"%>
+        <% end %>
+      </div>
+      <div class="col-6">
+        <div class="container border shadow w-50">
+          <h4 class='text-center'>Position Size</h4>
+          <h6>Total unidades a comprar</h6>
+          <p data-calculator-target="position"></p>
+        </div>
+      </div>
+    
+  </div>
+</div>
