@@ -1,2 +1,25 @@
 @import 'bootstrap';
 @import "font-awesome";
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.btn{
+  background-color: #f98907;
+  border-color: black;
+  color: black;
+}
+.btn:hover {
+  background-color: #ffb837;
+  color: black;
+}
+
+.titulo {
+  color: #f98907;
+}
+
+.form-group {
+  border-radius: 50%;
+}
