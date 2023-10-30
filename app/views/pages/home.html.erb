@@ -6,14 +6,6 @@
   </div>
 
   <div class="row" data-controller="calculator">
-
-
-
-
-
-
-
-
       <div class="container col-6">
 
         <%= simple_form_for :custom_form, url: root_path do |f| %>
@@ -35,16 +27,13 @@
            } %>
           <%= f.input :monto_arriesgar_unidad, disabled: true, input_html: {
             data: { calculator_target: 'arriesgar'}, class: 'gris rounded-5', placeholder: '$' } %>
+
+            <div class="form-actions">
+              <%= f.button :submit, "Refrescar", class: "btn rounded-5 my-4 mt-1" %>
+            </div>
         <% end %>
+
       </div>
-
-
-
-
-
-
-
-
 
       <div class="container col-6">
         <div class="container border shadow w-50 rounded-5 ">
