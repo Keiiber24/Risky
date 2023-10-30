@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = ["total", "porcentaje", "capital", "entrada", "salida", "arriesgar", "position"];
 
   connect() {
-    
+
   }
 
   calcularCapitalRiesgo() {
@@ -21,4 +21,3 @@ export default class extends Controller {
     this.positionTarget.innerHTML = `<bold>${this.capitalTarget.value / this.arriesgarTarget.value}</bold>`
   }
 }
-
